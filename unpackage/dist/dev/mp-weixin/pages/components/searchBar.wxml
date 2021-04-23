@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['toSearch',['$event']]]]]}}" class="{{['search-box',(isLeft)?'left':'']}}" bindtap="__e"><icon size="20" type="search"></icon><input type="text" value="" placeholder="搜索" data-event-opts="{{[['focus',[['e0',['$event']]]],['blur',[['e1',['$event']]]]]}}" bindfocus="__e" bindblur="__e"/></view>

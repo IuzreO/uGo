@@ -1,0 +1,72 @@
+.cate.container {
+  /* 保持和屏幕一样高 */
+  height: 100vh;
+  position: relative;
+}
+.cate.container .bottom-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  top: 92rpx;
+  bottom: 0;
+}
+.cate.container .bottom-box .left .nav-item {
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  background-color: #f4f4f4;
+  padding: 0 5rpx;
+}
+.cate.container .bottom-box .left .nav-item.active {
+  background-color: white;
+  position: relative;
+}
+.cate.container .bottom-box .left .nav-item.active::before {
+  content: '';
+  position: absolute;
+  width: 8rpx;
+  height: 60rpx;
+  left: 0;
+  top: 20rpx;
+  background-color: #eb4450;
+}
+.cate.container .bottom-box .right {
+  padding: 20rpx 16rpx;
+}
+.cate.container .bottom-box .right .title-img {
+  width: 560rpx;
+  height: 180rpx;
+}
+.cate.container .bottom-box .right .section .title {
+  text-align: center;
+  color: #e0e0e0;
+  height: 110rpx;
+  line-height: 110rpx;
+}
+.cate.container .bottom-box .right .section text {
+  color: black;
+  margin: 0 30rpx;
+}
+.cate.container .bottom-box .right .section-items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  /* 允许换行 */
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.cate.container .bottom-box .right .item {
+  text-align: center;
+  width: 33.33%;
+}
+.cate.container .bottom-box .right .item image {
+  height: 120rpx;
+  width: 120rpx;
+}
+.cate.container .bottom-box .right .item text {
+  display: block;
+  font-size: 24rpx;
+}
+

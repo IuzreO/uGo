@@ -1,0 +1,28 @@
+.search-box {
+  background-color: #fe2c4b;
+  padding: 16rpx;
+  position: relative;
+}
+input {
+  background-color: white;
+  -webkit-border-radius: 10rpx;
+          border-radius: 10rpx;
+  height: 68rpx;
+  padding-left: 360rpx;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+icon {
+  position: absolute;
+  left: 320rpx;
+  top: 28rpx;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.search-box.left input {
+  padding-left: 45rpx;
+}
+.search-box.left icon {
+  left: 20rpx;
+}
+

@@ -1,10 +1,11 @@
 <template>
 	<view class="home-container">
 		<!-- 顶部搜索区域 -->
-		<view class="search-box" :class="{left:isLeft}">
+		<!-- 	<view class="search-box" :class="{left:isLeft}">
 			<icon size="20" type="search"></icon>
 			<input @focus="isLeft=true" @blur="isLeft=false" type="text" value="" placeholder="搜索" />
-		</view>
+		</view> -->
+		<searchBar></searchBar>
 		<!-- 轮播图区域 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
 			<swiper-item v-for="item in swiperList" :key='item.goods_id'>
@@ -30,7 +31,7 @@
 					</view>
 					<!-- 右侧图片 -->
 					<view class="right">
-						<template v-for="(item2,index2) in item.product_list" >
+						<template v-for="(item2,index2) in item.product_list">
 							<image v-if="index2!==0" :src="item2.image_src" :key='index2'></image>
 						</template>
 					</view>
@@ -46,12 +47,14 @@
 </template>
 
 <script>
+	import searchBar from '../../components/searchBar.vue'
 	export default {
+		components: {
+			searchBar
+		},
 		data() {
 			// 定义标记变量
 			return {
-				// 是否控制显示在左侧
-				isLeft: false,
 				// 轮播图图片列表
 				swiperList: [],
 				// 导航列表
@@ -94,7 +97,7 @@
 				this.floorList = res.data.message
 			})
 		},
-				// 页面滚动监听事件
+		// 页面滚动监听事件
 		onPageScroll(event) {
 			if (event.scrollTop >= 200) {
 				// 显示
@@ -104,10 +107,10 @@
 				this.isShow = false
 			}
 		},
-		methods:{
-			toTop(){
+		methods: {
+			toTop() {
 				uni.pageScrollTo({
-					scrollTop:0
+					scrollTop: 0
 				})
 			}
 		}
@@ -116,38 +119,6 @@
 
 <style lang="less">
 	.home-container {
-		.search-box {
-			background-color: #fe2c4b;
-			padding: 16rpx;
-			position: relative;
-		}
-
-		input {
-			background-color: white;
-			border-radius: 10rpx;
-			height: 68rpx;
-			padding-left: 360rpx;
-			// 延时 动画效果
-			transition: .5s;
-		}
-
-		icon {
-			position: absolute;
-			left: 320rpx;
-			top: 28rpx;
-			transition: .5s;
-		}
-
-		.search-box.left {
-			input {
-				padding-left: 45rpx;
-			}
-
-			icon {
-				left: 20rpx
-			}
-		}
-
 		.swiper-img {
 			width: 100%;
 		}
